@@ -12,9 +12,12 @@ type Monitor struct{
 // ConstructMonitor takes a car capacity as argument, and
 // returns a new monitor
 func ConstructMonitor(carQSz int) Monitor {
+	ClearMessage();
+	fmt.Print("Calibrating the monitor");
+	fmt.Println();
 	var mon Monitor;
 	mon.trOpen = make(chan int);
-	mon.crChans = make([]chan int, 0, 1);
+	mon.crChans = make([]chan int, 0, 0);
 	
 	return mon;
 }

@@ -11,8 +11,9 @@ type Passenger struct {
 // ConstructPassenger creates a new instantiated passenger
 // struct and returns it
 func ConstructPassenger() Passenger {
-	
-	return nil;
+	ClearMessage();
+	fmt.Print("Straightening passenger spines...");
+	return Passenger{};
 }
 
 // RunPassenger is used to run a passenger as a goroutine

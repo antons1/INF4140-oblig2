@@ -10,8 +10,10 @@ type Car struct {
 
 // ConstructCar creates a new Car and returns it
 func ConstructCar() Car {
-	
-	return nil;
+	ClearMessage();
+	fmt.Print("Assembling the car...");
+	fmt.Println();
+	return Car{};
 }
 
 // RunCar is used to run a car as a goroutine

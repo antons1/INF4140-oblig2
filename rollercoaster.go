@@ -17,6 +17,8 @@ var (
 
 // Setup initializes everything needed to run the rollercoaster
 func setup() {
+	fmt.Print("Initializing the rollercoaster...");
+	fmt.Println();
 	mon = ConstructMonitor(CarCap);
 	car = ConstructCar();
 	
@@ -28,4 +30,15 @@ func setup() {
 // Main is the main method of RollerCoaster
 func main() {
 	setup();
+	ClearMessage();
+	mon.RunMonitor();
+	car.RunCar(&mon);
+	for i := range pass {
+		pass[i].RunPassenger(&mon);
+	}
+}
+
+// ClearMessage clears the current line
+func ClearMessage() {
+	fmt.Print("\r                                                  \r");
 }
