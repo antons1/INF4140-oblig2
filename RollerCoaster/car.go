@@ -3,10 +3,10 @@ import(
 	"fmt"
 )
 
-type car struct {
+type Car struct {
 	
 }
 
-func (car* struct) RunCar() {
+func (car* Car) RunCar() {
 	
 }

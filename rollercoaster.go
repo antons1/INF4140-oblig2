@@ -1,7 +1,7 @@
 package main
 import(
 	"fmt"
-	"RollerCoaster"
+	"RollerCoaster/RollerCoaster"
 )
 
 func main() {
