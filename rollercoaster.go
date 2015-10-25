@@ -1,8 +1,10 @@
 package main
 import(
 	"fmt"
-	"RollerCoaster/RollerCoaster"
 )
+
+const CarCap = 6;
+const QuSize = 10;
 
 func main() {
 	
