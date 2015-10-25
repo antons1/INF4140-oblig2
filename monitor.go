@@ -1,29 +1,37 @@
 package main
 import(
-	"fmt"
+	
 )
+
+type semaphore chan int;
 
 // The Monitor struct holds information about monitors
 type Monitor struct{
-	trOpen chan int // 
-	crChans[] chan int
+	queue semaphore;
+	checkin semaphore;
+	boarding semaphore;
+	riding semaphore;
+	unloading semaphore;
 }
 
 // ConstructMonitor takes a car capacity as argument, and
 // returns a new monitor
 func ConstructMonitor(carQSz int) Monitor {
-	ClearMessage();
-	fmt.Print("Calibrating the monitor");
-	fmt.Println();
+	PrintMessage("Calibrating the monitor...\n");
 	var mon Monitor;
-	mon.trOpen = make(chan int);
-	mon.crChans = make([]chan int, 0, 0);
+	
+	mon.queue = make(semaphore);
+	mon.checkin = make(semaphore, 1);
+	mon.boarding = make(semaphore);
+	mon.riding = make(semaphore, 1);
+	mon.unloading = make(semaphore);
 	
 	return mon;
 }
 
 // RunMonitor is used to run the Monitor as a goroutine
 func (monitor* Monitor) RunMonitor() {
+	// Open for passengers
 	for {
 		
 	}
@@ -32,8 +40,9 @@ func (monitor* Monitor) RunMonitor() {
 // TakeRide is used by Passengers to register themselves into
 // the car queue in the monitor. It takes a channel as argument,
 // that the monitor uses to notify the car when it has space
-func (monitor* Monitor) TakeRide(carReady chan int) {
-	monitor.crChans = append(monitor.crChans, carReady);
+func (monitor* Monitor) TakeRide() {
+	
+	
 }
 
 // Load is used by the car to load a passenger
