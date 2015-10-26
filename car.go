@@ -1,40 +1,41 @@
 package main
-import(
+
+import (
 	"fmt"
 	"time"
 )
 
 // The Car struct contains information about a car
 type Car struct {
-	name string;
-	id int;
+	name string
+	id   int
 }
 
 // ConstructCar creates a new Car and returns it
 func ConstructCar(nm string, id int) Car {
-	PrintMessage("Assembling the car...\n");
-	return Car{nm, id};
+	PrintMessage("Assembling the car...\n")
+	return Car{nm, id}
 }
 
 // RunCar is used to run a car as a goroutine
-func (car* Car) RunCar(monitor* Monitor) {
+func (car *Car) RunCar(monitor *Monitor) {
 	for {
-		fmt.Printf("%-10s %s is ready\n", 
-			"#CAR", 
-			car.name);
+		fmt.Printf("%-10s %s is ready\n",
+			"#CAR",
+			car.name)
 		fmt.Printf("%-10s %s is loading passengers\n",
 			"#CAR",
-			car.name);
-		monitor.Load();
-		
+			car.name)
+		monitor.Load()
+
 		fmt.Printf("%-10s %s rides around the track\n",
 			"#CAR",
-			car.name);
-		time.Sleep(30 * time.Second);
-		
+			car.name)
+		time.Sleep(5 * time.Second)
+
 		fmt.Printf("%-10s %s is unloading passengers\n",
 			"#CAR",
-			car.name);
-		monitor.Unload();
+			car.name)
+		monitor.Unload()
 	}
 }
