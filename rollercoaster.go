@@ -21,7 +21,7 @@ var (
 
 // Setup initializes everything needed to run the rollercoaster
 func setup() {
-	fmt.Printf("Building the rollercoaster...\n")
+	fmt.Printf("## Building the rollercoaster...\n")
 	PrepareRandom();
 	mon = ConstructMonitor(CarCap)
 	car = ConstructCar(GetCoasterName(), 1)
@@ -41,7 +41,7 @@ func main() {
 		go pass[i].RunPassenger(&mon)
 	}
 
-	fmt.Printf("Entering the loops...\n")
+	fmt.Printf("## Entering the loops...\n")
 	for {
 
 	}

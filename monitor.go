@@ -48,6 +48,9 @@ func (monitor *Monitor) TakeRide() {
 	monitor.queue.Wait()
 	monitor.checkin.Wait()
 	monitor.inCar++
+	fmt.Printf("## %-8s ## Now %d passengers in car (boarding)\n",
+		"MONITOR",
+		monitor.inCar)
 	if monitor.inCar == CarCap {
 		monitor.boarding.Signal()
 	}
@@ -67,9 +70,11 @@ func (monitor *Monitor) Load() {
 
 // Unload is used by the car to unload a Passenger
 func (monitor *Monitor) Unload() {
-	monitor.inCar = 0
-	for i := 0; i < CarCap; i++ {
+	for ; 0 < monitor.inCar; monitor.inCar-- {
 		monitor.riding.Signal()
 		monitor.unloading.Wait()
+		fmt.Printf("## %-8s ## Now %d passengers in car (unboarding)\n",
+			"MONITOR",
+			monitor.inCar)
 	}
 }

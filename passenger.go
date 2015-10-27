@@ -14,23 +14,23 @@ type Passenger struct {
 // ConstructPassenger creates a new instantiated passenger
 // struct and returns it
 func ConstructPassenger(nm string, id int) Passenger {
-	fmt.Printf("Straightening passenger spines...")
+	fmt.Printf("## Straightening passenger spines...\n")
 	return Passenger{nm, id}
 }
 
 // RunPassenger is used to run a passenger as a goroutine
 func (passenger *Passenger) RunPassenger(monitor *Monitor) {
 	for {
-		fmt.Printf("%-10s %s %d queuing up for ride\n",
-			"#PASS",
+		fmt.Printf("## %-8s ## %s (%d) queuing up for ride\n",
+			"PASS",
 			passenger.name,
 			passenger.id)
 
 		// Added to the queue
 		monitor.TakeRide()
 
-		fmt.Printf("%-10s %s %d got off the ride and is wandering around the park\n",
-			"#PASS",
+		fmt.Printf("## %-8s ## %s (%d) got off the ride and is wandering around the park\n",
+			"PASS",
 			passenger.name,
 			passenger.id)
 

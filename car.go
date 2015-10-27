@@ -13,28 +13,28 @@ type Car struct {
 
 // ConstructCar creates a new Car and returns it
 func ConstructCar(nm string, id int) Car {
-	fmt.Printf("Assembling the car...\n")
+	fmt.Printf("## Assembling the car...\n")
 	return Car{nm, id}
 }
 
 // RunCar is used to run a car as a goroutine
 func (car *Car) RunCar(monitor *Monitor) {
 	for {
-		fmt.Printf("%-10s %s is ready\n",
-			"#CAR",
+		fmt.Printf("## %-8s ## %s is ready\n",
+			"CAR",
 			car.name)
-		fmt.Printf("%-10s %s is loading passengers\n",
-			"#CAR",
+		fmt.Printf("## %-8s ## %s is loading passengers\n",
+			"CAR",
 			car.name)
 		monitor.Load()
 
-		fmt.Printf("%-10s %s rides around the track\n",
-			"#CAR",
+		fmt.Printf("## %-8s ## %s rides around the track\n",
+			"CAR",
 			car.name)
 		time.Sleep(5 * time.Second)
 
-		fmt.Printf("%-10s %s is unloading passengers\n",
-			"#CAR",
+		fmt.Printf("## %-8s ## %s is unloading passengers\n",
+			"CAR",
 			car.name)
 		monitor.Unload()
 	}
