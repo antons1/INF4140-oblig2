@@ -14,7 +14,7 @@ type Passenger struct {
 // ConstructPassenger creates a new instantiated passenger
 // struct and returns it
 func ConstructPassenger(nm string, id int) Passenger {
-	fmt.Printf("## Straightening passenger spines...\n")
+	fmt.Printf("## Straightening passenger spines...\r")
 	return Passenger{nm, id}
 }
 
@@ -34,6 +34,6 @@ func (passenger *Passenger) RunPassenger(monitor *Monitor) {
 			passenger.name,
 			passenger.id)
 
-		time.Sleep(5 * time.Second)
+		time.Sleep(time.Duration(GetRandomNumber(5, 15)) * time.Second)
 	}
 }

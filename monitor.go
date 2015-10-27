@@ -17,7 +17,7 @@ type Monitor struct {
 // ConstructMonitor takes a car capacity as argument, and
 // returns a new monitor
 func ConstructMonitor(carQSz int) Monitor {
-	fmt.Printf("Calibrating the monitor...\n")
+	fmt.Printf("## Calibrating the monitor...\n")
 	var mon Monitor
 
 	mon.queue = make(semaphore, 1)

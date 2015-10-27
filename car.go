@@ -31,7 +31,7 @@ func (car *Car) RunCar(monitor *Monitor) {
 		fmt.Printf("## %-8s ## %s rides around the track\n",
 			"CAR",
 			car.name)
-		time.Sleep(5 * time.Second)
+		time.Sleep(15 * time.Second)
 
 		fmt.Printf("## %-8s ## %s is unloading passengers\n",
 			"CAR",

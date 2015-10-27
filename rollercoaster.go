@@ -35,6 +35,7 @@ func setup() {
 func main() {
 	setup()
 	fmt.Println()
+	fmt.Println()
 	go mon.RunMonitor()
 	go car.RunCar(&mon)
 	for i := range pass {
