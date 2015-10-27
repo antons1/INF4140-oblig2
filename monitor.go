@@ -1,6 +1,8 @@
 package main
 
-import ()
+import (
+	"fmt"
+)
 
 // The Monitor struct holds information about monitors
 type Monitor struct {
@@ -15,7 +17,7 @@ type Monitor struct {
 // ConstructMonitor takes a car capacity as argument, and
 // returns a new monitor
 func ConstructMonitor(carQSz int) Monitor {
-	PrintMessage("Calibrating the monitor...\n")
+	fmt.Printf("Calibrating the monitor...\n")
 	var mon Monitor
 
 	mon.queue = make(semaphore, 1)

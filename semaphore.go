@@ -4,14 +4,17 @@ import (
 	"time"
 )
 
+// Define a semaphore
 type semaphore chan int
 
+// Wait sets the semaphore to wait
 func (s semaphore) Wait() {
-	time.sleep(100 * time.Millisecond)
+	time.Sleep(100 * time.Millisecond)
 	s <- 1
 }
 
+// Signal sets the semaphore to continue
 func (s semaphore) Signal() {
-	time.sleep(100 * time.Millisecond)
+	time.Sleep(100 * time.Millisecond)
 	<-s
 }

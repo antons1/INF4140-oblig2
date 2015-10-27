@@ -14,7 +14,7 @@ type Passenger struct {
 // ConstructPassenger creates a new instantiated passenger
 // struct and returns it
 func ConstructPassenger(nm string, id int) Passenger {
-	PrintMessage("Straightening passenger spines...")
+	fmt.Printf("Straightening passenger spines...")
 	return Passenger{nm, id}
 }
 

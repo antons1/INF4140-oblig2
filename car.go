@@ -13,7 +13,7 @@ type Car struct {
 
 // ConstructCar creates a new Car and returns it
 func ConstructCar(nm string, id int) Car {
-	PrintMessage("Assembling the car...\n")
+	fmt.Printf("Assembling the car...\n")
 	return Car{nm, id}
 }
 

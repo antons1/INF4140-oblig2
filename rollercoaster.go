@@ -21,13 +21,13 @@ var (
 
 // Setup initializes everything needed to run the rollercoaster
 func setup() {
-	PrintMessage("Building the rollercoaster...\n")
+	fmt.Printf("Building the rollercoaster...\n")
 	PrepareRandom();
 	mon = ConstructMonitor(CarCap)
-	car = ConstructCar(getCoasterName(), 1)
+	car = ConstructCar(GetCoasterName(), 1)
 
 	for i := range pass {
-		pass[i] = ConstructPassenger(getPersonName(), i)
+		pass[i] = ConstructPassenger(GetPersonName(), i)
 	}
 }
 
@@ -41,15 +41,10 @@ func main() {
 		go pass[i].RunPassenger(&mon)
 	}
 
-	PrintMessage("Entering the loops...\n")
+	fmt.Printf("Entering the loops...\n")
 	for {
 
 	}
-}
-
-// ClearMessage clears the current line
-func PrintMessage(arg string) {
-	fmt.Printf("%20s\r", arg)
 }
 
 // PrepareRandom prepares the RNG
