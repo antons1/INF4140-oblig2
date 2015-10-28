@@ -7,8 +7,8 @@ import (
 
 // The Car struct contains information about a car
 type Car struct {
-	name string	// Used for terminal output
-	id   int	// In case of multiple cars in the future
+	name string // Used for terminal output
+	id   int    // In case of multiple cars in the future
 }
 
 // ConstructCar creates a new Car and returns it
@@ -26,7 +26,7 @@ func (car *Car) RunCar(monitor *Monitor) {
 		fmt.Printf("## %-8s ## %s is loading passengers\n",
 			"CAR",
 			car.name)
-		monitor.Load()	// Car waits for passengers to enter
+		monitor.Load() // Car waits for passengers to enter
 
 		fmt.Printf("## %-8s ## %s rides around the track\n",
 			"CAR",
@@ -36,10 +36,10 @@ func (car *Car) RunCar(monitor *Monitor) {
 		fmt.Printf("## %-8s ## %s is unloading passengers\n",
 			"CAR",
 			car.name)
-		monitor.Unload()	// Car waits for passengers to leave
+		monitor.Unload() // Car waits for passengers to leave
 		fmt.Printf("## %-8s ## %s is empty\n",
 			"CAR",
 			car.name)
-			
+
 	}
 }

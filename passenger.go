@@ -7,8 +7,8 @@ import (
 
 // The Passenger struct contains information about a passenger
 type Passenger struct {
-	name string	// For terminal output
-	id   int	// To discern between passengers with the same name
+	name string // For terminal output
+	id   int    // To discern between passengers with the same name
 }
 
 // ConstructPassenger creates a new instantiated passenger

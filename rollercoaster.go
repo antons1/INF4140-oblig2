@@ -9,20 +9,20 @@ import (
 	"time"
 )
 
-const CarCap = 6	// Max car capacity
-const QueueSize = 15	// Number of passengers that are created
+const CarCap = 6     // Max car capacity
+const QueueSize = 15 // Number of passengers that are created
 
 var (
 	mon  Monitor              // Monitor
 	car  Car                  // Car
 	pass [QueueSize]Passenger // Passengers
-	r1	rand.Rand	// Random Number Generator
+	r1   rand.Rand            // Random Number Generator
 )
 
 // Setup initializes everything needed to run the rollercoaster
 func setup() {
 	fmt.Printf("## Building the rollercoaster...\n")
-	PrepareRandom();
+	PrepareRandom()
 	mon = ConstructMonitor(CarCap)
 	car = ConstructCar(GetCoasterName(), 1)
 
@@ -50,11 +50,11 @@ func main() {
 
 // PrepareRandom prepares the RNG
 func PrepareRandom() {
-	s1 := rand.NewSource(time.Now().UnixNano());
-	r1 = *rand.New(s1);
+	s1 := rand.NewSource(time.Now().UnixNano())
+	r1 = *rand.New(s1)
 }
 
 // GetRandomNumber generates a random number between min and max
 func GetRandomNumber(min, max int) int {
-	return r1.Intn(max-min)+min;
+	return r1.Intn(max-min) + min
 }
