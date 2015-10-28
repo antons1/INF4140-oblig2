@@ -15,6 +15,6 @@ func (s semaphore) Wait() {
 
 // Signal sets the semaphore to continue
 func (s semaphore) Signal() {
-	time.Sleep(200 * time.Millisecond)
+	time.Sleep(200 * time.Millisecond)	// Slow down to make output readable
 	<-s
 }
