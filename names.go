@@ -52,6 +52,7 @@ var (
 		"The Tornado",
 		"Flying Saucers",
 		"Terrible Pterodactyl",
+		"Mister Bones Wild Ride",
 	}
 )
 
