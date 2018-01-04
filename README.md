@@ -1,8 +1,8 @@
-#Oblig 2 INF4140 - The Roller Coaster problem
+# Oblig 2 INF4140 - The Roller Coaster problem
 An implementation of The Roller Coaster problem of concurrent
 programming. Implemented using Go and semaphores.
 
-###How to run
+### How to run
 1. Place the source files in a folder called "RollerCoaster" under
 your src folder in the GOPATH.
 2. Run the command "go install rollercoaster"
@@ -11,7 +11,7 @@ folder in the GOPATH.
 4. Run it, and watch 15 digital people run a digital rollercoaster
 in a concurrent way!
 
-###Configuration
+### Configuration
 Do you want to configure the program you say? That's kind of possible!
 
 The following can be edited in rollercoaster.go
@@ -23,7 +23,7 @@ const carCap	// Spaces in the car
 The names used for the rides and the passengers can be edited in 
 names.go
 
-###Files
+### Files
 | Filename         | File function                      |
 | :--------------- | :--------------------------------- |
 | rollercoaster.go | Contains main method and spawns the goroutines for the other parts, as well as some utils |
